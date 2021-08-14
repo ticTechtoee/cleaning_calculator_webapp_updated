@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'Home.apps.HomeConfig',
     'About.apps.AboutConfig',
     'Tutorial.apps.TutorialConfig',
+    'calculator.apps.CalculatorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
