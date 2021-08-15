@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Calculator Page</title>
@@ -121,12 +121,14 @@
                 <td>
                     {% if selected_range %}
                     {% for rest in range_price %}
-                    <input name="J20" id="J20" value="{{ rest.price }}">
+                    <input name="a1" id="a1" value="{{ rest.price }}">
                     {% endfor %}
                     {% endif %}
                 </td>
             </tr>
-            </form>
+
+</form>
+
             <form name="price_rates" method="post">
                 {% csrf_token %}
                 <tr>
@@ -134,11 +136,10 @@
                     <td><label>Bedrooms: </label></td>
                     <td><input name="b1" id="b1" value=2></td>
                     <td><input name="b2" id="b2" value=3></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate1" value="{{ rates1.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate1" value="{{ rates1.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate1" id="rate1" value="{{ rates1.rate }}" {% if not request.user.is_superuser %} disabled {% endif %}></td>
+
+
                     <td><input name="b3" id="b3" value=0></td>
 
 
@@ -147,11 +148,9 @@
                     <td><label>Bathrooms: </label></td>
                     <td><input name="c1" id="c1" value=2.00></td>
                     <td><input name="c2" id="c2" value=7></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate2" value="{{ rates2.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate2" value="{{ rates2.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate2" id="rate2" value="{{ rates2.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
 
                     <td><input name="c3" id="c3" value=0></td>
 
@@ -162,11 +161,9 @@
                     <td><label>Living Room: </label></td>
                     <td><input name="d1" id="d1" value=1></td>
                     <td><input name="d2" id="d2" value=5></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate3" value="{{ rates3.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate3" value="{{ rates3.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate3" id="rate3" value="{{ rates3.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="d3" id="d3" value=0></td>
 
                 </tr>
@@ -176,11 +173,9 @@
                     <td><label>Dining Room: </label></td>
                     <td><input name="e1" id="e1" value=1></td>
                     <td><input name="e2" id="e2" value=4></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate4" value="{{ rates4.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate4" value="{{ rates4.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate4" id="rate4" value="{{ rates4.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="e3" id="e3" value=0></td>
 
                 </tr>
@@ -190,11 +185,9 @@
                     <td><label>Den/Family Room: </label></td>
                     <td><input name="f1" id="f1" value=0></td>
                     <td><input name="f2" id="f2" value=5></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate5" value="{{ rates5.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate5" value="{{ rates5.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate5" id="rate5" value="{{ rates5.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="f3" id="f3" value=0></td>
 
                 </tr>
@@ -204,11 +197,9 @@
                     <td><label>Study: </label></td>
                     <td><input name="g1" id="g1" value=0></td>
                     <td><input name="g2" id="g2" value=4></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate6" value="{{ rates6.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate6" value="{{ rates6.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate6" id="rate6" value="{{ rates6.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="g3" id="g3" value=0></td>
 
                 </tr>
@@ -218,11 +209,9 @@
                     <td><label>Game Room: </label></td>
                     <td><input name="h1" id="h1" value=0></td>
                     <td><input name="h2" id="h2" value=4></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate7" value="{{ rates7.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate7" value="{{ rates7.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate7"  id="rate7" value="{{ rates7.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="h3" id="h3" value=0></td>
 
                 </tr>
@@ -232,11 +221,9 @@
                     <td><label>Media Room: </label></td>
                     <td><input name="i1" id="i1" value=0></td>
                     <td><input name="i2" id="i2" value=3></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate8" value="{{ rates8.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate8" value="{{ rates8.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate8" id="rate8" value="{{ rates8.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="i3" id="i3" value=0></td>
 
                 </tr>
@@ -246,11 +233,9 @@
                     <td><label>Laundry Room: </label></td>
                     <td><input name="j1" id="j1" value=1></td>
                     <td><input name="j2" id="j2" value=2></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate9" value="{{ rates9.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate9" value="{{ rates9.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate9" id="rate9" value="{{ rates9.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="j3" id="j3" value=0></td>
 
                 </tr>
@@ -260,11 +245,9 @@
                     <td><label>Rooms With HW Floors: </label></td>
                     <td><input name="k1" id="k1" value=0></td>
                     <td><input name="k2" id="k2" value=2></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate10" value="{{ rates10.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate10" value="{{ rates10.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate10" id="rate10" value="{{ rates10.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="k3" id="k3" value=0></td>
 
                 </tr>
@@ -274,11 +257,9 @@
                     <td><label>Multiple Vanities in Master Bath: </label></td>
                     <td><input name="l1" id="l1" value=0></td>
                     <td><input name="l2" id="l2" value=2></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate11" value="{{ rates11.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate11" value="{{ rates11.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate11" id="rate11" value="{{ rates11.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="l3" id="l3" value=0></td>
 
                 </tr>
@@ -288,11 +269,9 @@
                     <td><label>People: </label></td>
                     <td><input name="m1" id="m1" value=3></td>
                     <td><input name="m2" id="m2" value=2></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate12" value="{{ rates12.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate12" value="{{ rates12.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate12" id="rate12" value="{{ rates12.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="m3" id="m3" value=0></td>
 
                 </tr>
@@ -302,11 +281,9 @@
                     <td><label>Pets: </label></td>
                     <td><input name="n1" id="n1" value=1></td>
                     <td><input name="n2" id="n2" value=1></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate13" value="{{ rates13.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate13" value="{{ rates13.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate13" id="rate13" value="{{ rates13.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="n3" id="n3" value=0></td>
 
                 </tr>
@@ -316,27 +293,24 @@
                     <td><label>Number of Stories/Levels: </label></td>
                     <td><input name="o1" id="o1" value=2></td>
                     <td><input name="o2" id="o2" value=2></td>
-                    {% if not request.user.is_superuser %}
-                    <td><input name="rate14" value="{{ rates14.rate }}" disabled></td>
-                    {% else %}
-                    <td><input name="rate14" value="{{ rates14.rate }}"></td>
-                    {% endif %}
+
+                    <td><input name="rate14" id="rate14" value="{{ rates14.rate }}" {% if not request.user.is_superuser %}  disabled {% endif %}></td>
+
                     <td><input name="o3" id="o3" value=0></td>
 
                 </tr>
-            </form>
-            <tr>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                {% if request.user.is_superuser %}
-                <td><input type="button" value='Save Value'></td>
-                {% else %}
-                <td><input type="button" value='Save Value' disabled></td>
-                {% endif %}
-                <td><input type="submit" value="Calculate" name="Calculate"></td>
-            </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td><input type="submit" value="Save Values" name="update_value" {% if not request.user.is_superuser %} disabled {% endif %}></td>
+
+                    <td><input type="button" value="Calculate" name="Calculate" onclick="b3Value();c3Value();d3Value();e3Value();f3Value();g3Value();h3Value();i3Value();j3Value();k3Value();l3Value();m3Value();n3Value();o3Value();sumOfValues();p4Value();p3Value();"></td>
+                </tr>
+            </form>
         </table>
         <br>
         <br>
@@ -358,7 +332,8 @@
                 <td><input name="p1" id="p1" value="10"></td>
                 <td><input name="p2" id="p2" value="20"></td>
                 <td><input name="p3" id="p3" value="30"></td>
-                <td>Sales Tax Amount: 4.0%</td>
+                <td><label>Sales Tax Amount: </td><td><input name="p4" id="p4" value="4.00"></td>
+
 
             </tr>
 
@@ -368,7 +343,7 @@
                 <td><input name="q1" id="q1" value="10"></td>
                 <td><input name="q2" id="q2" value="20"></td>
                 <td><input name="q3" id="q3" value="30"></td>
-                <td>Sales Tax Amount: 4.0%</td>
+                <td></td>
 
             </tr>
 
@@ -378,7 +353,7 @@
                 <td><input name="r1" id="r1" value="10"></td>
                 <td><input name="r2" id="r2" value="20"></td>
                 <td><input name="r3" id="r3" value="30"></td>
-                <td>Sales Tax Amount: 4.0%</td>
+                <td></td>
 
             </tr>
 
@@ -434,6 +409,6 @@
 
     </center>
 </div>
-
+<script src="/static/assets/js/calculations.js"></script>
 </body>
 </html>
