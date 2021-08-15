@@ -115,22 +115,97 @@ var m3 = document.getElementById('m3').value;
 var n3 = document.getElementById('n3').value;
 var o3 = document.getElementById('o3').value;
 
+var value1 = 15;
+var value2 = 30;
 
 result = parseInt(a1) + parseInt(b3) + parseInt(c3) + parseInt(d3) + parseInt(e3) + parseInt(f3) + parseInt(g3) + parseInt(h3) + parseInt(i3) + parseInt(j3) + parseInt(k3) + parseInt(l3) + parseInt(m3) + parseInt(n3) + parseInt(o3);
 document.getElementById('p1').value = result;
-}
+document.getElementById('q1').value = result + parseInt(value1);
+document.getElementById('r1').value = result + parseInt(value2);
 
+}
+//It's the value of p2
 p4Value = function()
 {
-
-    var p4 = document.getElementById('p4').value;
-    document.getElementById('p2').value = parseFloat(result) * (parseFloat(p4)/100);
-
+var p4 = document.getElementById('p4').value;
+document.getElementById('p2').value = (parseFloat(result) * (parseFloat(p4)/100)).toFixed(2);
 }
+
 p3Value = function()
 {
 var p1 = document.getElementById('p1').value;
 var p2 = document.getElementById('p2').value;
-document.getElementById('p3').value = parseFloat(p1) + parseFloat(p2);
+document.getElementById('p3').value = Math.round(parseFloat(p1) + parseFloat(p2));
+}
 
+q2Value = function()
+{
+var p4 = document.getElementById('p4').value;
+var q1 = document.getElementById('q1').value;
+document.getElementById('q2').value = (parseFloat(q1) * (parseFloat(p4)/100)).toFixed(2);
+}
+
+q3Value = function()
+{
+var q1 = document.getElementById('q1').value;
+var q2 = document.getElementById('q2').value;
+document.getElementById('q3').value = Math.round(parseFloat(q1) + parseFloat(q2));
+}
+
+r2Value = function()
+{
+var p4 = document.getElementById('p4').value;
+var r1 = document.getElementById('r1').value;
+document.getElementById('r2').value = (parseFloat(r1) * (parseFloat(p4)/100)).toFixed(2);
+}
+
+r3Value = function()
+{
+var r1 = document.getElementById('r1').value;
+var r2 = document.getElementById('r2').value;
+document.getElementById('r3').value = Math.round(parseFloat(r1) + parseFloat(r2));
+}
+
+//Estimate for One-Time And Initial Clean
+
+s1Value = function()
+{
+var p3 = document.getElementById('p3').value;
+var multiple = parseFloat(1.2);
+document.getElementById('s1').innerHTML = Math.round(parseFloat(p3) * parseFloat(multiple));
+}
+
+s2Value = function()
+{
+var p3 = document.getElementById('p3').value;
+var multiple = parseFloat(1.5);
+document.getElementById('s2').innerHTML = Math.round(parseFloat(p3) * parseFloat(multiple));
+}
+
+t1Value = function()
+{
+var q3 = document.getElementById('q3').value;
+var multiple = parseFloat(1.2);
+document.getElementById('t1').innerHTML = Math.round(parseFloat(q3) * parseFloat(multiple));
+}
+
+t2Value = function()
+{
+var q3 = document.getElementById('q3').value;
+var multiple = parseFloat(1.5);
+document.getElementById('t2').innerHTML = Math.round(parseFloat(q3) * parseFloat(multiple));
+}
+
+u1Value = function()
+{
+var r3 = document.getElementById('r3').value;
+var multiple = parseFloat(1.2);
+document.getElementById('u1').innerHTML = Math.round(parseFloat(r3) * parseFloat(multiple));
+}
+
+u2Value = function()
+{
+var r3 = document.getElementById('r3').value;
+var multiple = parseFloat(1.5);
+document.getElementById('u2').innerHTML = Math.round(parseFloat(r3) * parseFloat(multiple));
 }
