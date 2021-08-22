@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Calculator
+    </title>
+    <style>
+
+table {
+            border:1px solid black;border-collapse:collapse;
+            width:600px
+
+         }
+         td
+         {
+        border:1px solid black;
+         }
+         #rateA1,#rateB1,#rateC1,#rateD1,#rateE1,#rateF1,#rateG1,#rateH1,#rateI1,#rateJ1,#rateK1,#rateL1,#rateM1,#rateN1
+         {
+         border:0px
+         }
+
+         #btn_submit, #btn_clear
+         {
+         width: 200px
+
+         }
+
+
+    </style>
+</head>
+<body>
+
+<center>
+
+    <table>
+
+
+            <th><center><h3>Home Details</h3></center></th>
+            <th><center><h3>Value</h3></center></th>
+
+
+
+        <tr>
+            <td><label>Square Feet: </label></td>
+
+
+            <td>
+<input id="a01" onblur="range();" value="">
+
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>Bedrooms</td>
+            <td><input id="b1" class="input" onblur="AAValue();" value=""></td>
+            <td id="rateA1"><input name="rate1" id="rate1" value="{{ rates1.rate }}" {% if not request.user.is_superuser %} hidden {% endif %}></td>
+
+        </tr>
+
+
+        <tr>
+            <td>Bathrooms</td>
+            <td><input  id="c1" class="input" onblur="ABValue();" value=""></td>
+            <td id="rateB1"><input name="rate2" id="rate2" value="{{ rates2.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+        <tr>
+            <td>Living Rooms</td>
+            <td><input value="" id="d1" class="input" onblur="ACValue();"></td>
+            <td id="rateC1"><input name="rate3" id="rate3" value="{{ rates3.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Dining Room</td>
+            <td><input value="" id="e1" class="input" onblur="ADValue();"></td>
+            <td id="rateD1"><input name="rate4" id="rate4" value="{{ rates4.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+        <tr>
+            <td>Den/Family Room</td>
+            <td><input value="" id="f1" class="input" onblur="AEValue();"></td>
+            <td id="rateE1"><input name="rate5" id="rate5" value="{{ rates5.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Study</td>
+            <td><input value="" id="h1" class="input" onblur="AFValue();"></td>
+            <td id="rateF1"><input name="rate6" id="rate6" value="{{ rates6.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Game Room</td>
+            <td><input value="" id="i1" class="input" onblur="AGValue();"></td>
+            <td id="rateG1"><input name="rate7" id="rate7" value="{{ rates7.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Media Room</td>
+            <td><input value="" id="j1" class="input" onblur="AHValue();"></td>
+            <td id="rateH1"><input name="rate8" id="rate8" value="{{ rates8.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Laundry Room</td>
+            <td><input value="" id="k1" class="input" onblur="AIValue();"></td>
+            <td id="rateI1"><input name="rate9" id="rate9" value="{{ rates9.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Rooms with HW Floors</td>
+            <td><input value="" id="l1" class="input" onblur="AJValue();"></td>
+            <td id="rateJ1"><input name="rate10" id="rate10" value="{{ rates10.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+        <tr>
+            <td>Multiple Vanities in Master Bath</td>
+            <td><input value="" id="m1" class="input" onblur="AKValue();"></td>
+
+            <td id="rateK1"><input name="rate11" id="rate11" value="{{ rates11.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>People</td>
+            <td><input value="" id="n1" class="input" onblur="ALValue();"></td>
+            <td id="rateL1"><input name="rate12" id="rate12" value="{{ rates12.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Pets</td>
+            <td><input value="" id="o1" class="input" onblur="AMValue();"></td>
+            <td id="rateM1"><input name="rate13" id="rate13" value="{{ rates13.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+        <tr>
+            <td>Number of Levels/Stories</td>
+            <td><input value="" id="p1" class="input" onblur="ANValue();"></td>
+            <td id="rateN1"><input name="rate14" id="rate14" value="{{ rates14.rate }}" {% if not request.user.is_superuser %} hidden
+                       {% endif %}></td>
+
+        </tr>
+
+
+
+
+
+        <tr>
+            <td><b>Total Weekly Service</b></td>
+            <td><b><input value="0" id="t1" class="input"></b></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><b>Alternate Weekly Service</b></td>
+            <td><b><input value="0" id="t2" class="input"></b></td>
+        <td></td>
+        </tr>
+        <tr>
+            <td><b>Monthly Service</b></td>
+            <td><b><input value="0" id="t3" class="input"></b></td>
+       <td></td>
+        </tr>
+
+
+        <tr>
+
+            <td><input type="submit" value="Submit" id="btn_submit" name="btn_submit" onclick="sumOfValues();tax();total();"></td>
+            <td><input type="button" value="Clear" id="btn_clear" name="btn_clear" onclick="clear();"></td>
+
+        </tr>
+
+    </table>
+
+
+    <div hidden>
+  <table>
+
+      <td><input id="a1" value=""></td>
+      <td><input id="AA" value=""></td>
+      <td><input id="AB" value=""></td>
+      <td><input id="AC" value=""></td>
+      <td><input id="AD" value=""></td>
+      <td><input id="AE" value=""></td>
+      <td><input id="AF" value=""></td>
+      <td><input id="AG" value=""></td>
+      <td><input id="AH" value=""></td>
+      <td><input id="AI" value=""></td>
+      <td><input id="AJ" value=""></td>
+      <td><input id="AK" value=""></td>
+      <td><input id="AL" value=""></td>
+      <td><input id="AM" value=""></td>
+      <td><input id="AN" value=""></td>
+
+      <td><input id="tax_ratio" value="5"></td>
+      <td><input id="tax1"></td>
+      <td><input id="tax2"></td>
+      <td><input id="tax3"></td>
+
+      <td><input id="q1"></td>
+      <td><input id="r1"></td>
+      <td><input id="s1"></td>
+
+
+
+
+
+
+
+  </table>
+    </div>
+
+
+</center>
+<script src="/static/assets/js/calculations.js"></script>
+</body>
+</html>
