@@ -1,89 +1,90 @@
 
-
+// Range function will set the price according to the input in square feet field
 range=function()
  {
+ var hour_rate = document.getElementById('u1').value;
 
             if(document.getElementById('a01').value >= 0 && document.getElementById('a01').value <= 1500)
                {
-               var val = 75 * 0.5;
+               var val = parseFloat(hour_rate) * 0.5;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 1500 && document.getElementById('a01').value <= 1750)
                {
-               var val = 75 * 0.55;
+               var val = parseFloat(hour_rate) * 0.55;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 1750 && document.getElementById('a01').value <= 2000)
                {
-               var val = 75 * 0.6;
+               var val = parseFloat(hour_rate) * 0.6;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 2000 && document.getElementById('a01').value <= 2250)
                {
-               var val = 75 * 0.65;
+               var val = parseFloat(hour_rate) * 0.65;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 2250 && document.getElementById('a01').value <= 2500)
                {
-               var val = 75 * 0.7;
+               var val = parseFloat(hour_rate) * 0.7;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 2500 && document.getElementById('a01').value <= 2750)
                {
-               var val = 75 * 0.75;
+               var val = parseFloat(hour_rate) * 0.75;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 2751 && document.getElementById('a01').value <= 3000)
                {
-               var val = 75 * 0.8;
+               var val = parseFloat(hour_rate) * 0.8;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 3000 && document.getElementById('a01').value <= 3250)
                {
-               var val = 75 * 0.85;
+               var val = parseFloat(hour_rate) * 0.85;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 3250 && document.getElementById('a01').value <= 3500)
                {
-               var val = 75 * 1;
+               var val = parseFloat(hour_rate) * 1;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 3500 && document.getElementById('a01').value <= 4000)
                {
-               var val = 75 * 0.5;
+               var val = parseFloat(hour_rate) * 0.5;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 4000 && document.getElementById('a01').value <= 4500)
                {
-               var val = 75 * 1.5;
+               var val = parseFloat(hour_rate) * 1.5;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 4500 && document.getElementById('a01').value <= 5000)
                {
-               var val = 75 * 2;
+               var val = parseFloat(hour_rate) * 2;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 5000 && document.getElementById('a01').value <= 5500)
                {
-               var val = 75 * 2.5;
+               var val = parseFloat(hour_rate) * 2.5;
                document.getElementById('a1').value = val;
                }
 
                if(document.getElementById('a01').value > 5500 && document.getElementById('a01').value <= 6000)
                {
-               var val = 75 * 3;
+               var val = parseFloat(hour_rate) * 3;
                document.getElementById('a1').value = val;
                }
                if(document.getElementById('a01').value > 6000 )
