@@ -32,7 +32,7 @@ table {
     </style>
 </head>
 <body>
-
+<div>
 <center>
 <!-- To implement the Row and Column Structure I have defined the Table -->
     <table>
@@ -52,7 +52,7 @@ table {
 
             <td>
                 <!-- Each Column starts with next alphabet (e.g a, b,c) Reason first one starts with a01 is i am lazy i didn't want to change the all row ids that why i kept it this way -->
-                <input id="a01" onblur="range();" value="">
+                <input id="a01" onblur="range();" value="0">
 
 
             </td>
@@ -61,7 +61,7 @@ table {
 
         <tr>
             <td>Bedrooms</td>
-            <td><input class="input" id="b1" onblur="AAValue();" value=""></td>
+            <td><input class="input" id="b1" onblur="AAValue();" value="0"></td>
             <td id="rateA1"><input %} %} endif hidden id="rate1" if name="rate1"
                                    not request.user.is_superuser value="{{ rates1.rate }}" {% {%></td>
 
@@ -70,7 +70,7 @@ table {
 
         <tr>
             <td>Bathrooms</td>
-            <td><input class="input" id="c1" onblur="ABValue();" value=""></td>
+            <td><input class="input"  id="c1" onblur="ABValue();" value="0"></td>
             <td id="rateB1"><input %} %} endif hidden id="rate2" if name="rate2"
                                    not request.user.is_superuser
                                    value="{{ rates2.rate }}" {% {%></td>
@@ -78,7 +78,7 @@ table {
         </tr>
         <tr>
             <td>Living Rooms</td>
-            <td><input class="input" id="d1" onblur="ACValue();" value=""></td>
+            <td><input class="input"  id="d1" onblur="ACValue();" value="0"></td>
             <td id="rateC1"><input %} %} endif hidden id="rate3" if name="rate3"
                                    not request.user.is_superuser
                                    value="{{ rates3.rate }}" {% {%></td>
@@ -87,7 +87,7 @@ table {
 
         <tr>
             <td>Dining Room</td>
-            <td><input class="input" id="e1" onblur="ADValue();" value=""></td>
+            <td><input class="input"  id="e1" onblur="ADValue();" value="0"></td>
             <td id="rateD1"><input %} %} endif hidden id="rate4" if name="rate4"
                                    not request.user.is_superuser
                                    value="{{ rates4.rate }}" {% {%></td>
@@ -95,7 +95,7 @@ table {
         </tr>
         <tr>
             <td>Den/Family Room</td>
-            <td><input class="input" id="f1" onblur="AEValue();" value=""></td>
+            <td><input class="input"  id="f1" onblur="AEValue();" value="0"></td>
             <td id="rateE1"><input %} %} endif hidden id="rate5" if name="rate5"
                                    not request.user.is_superuser
                                    value="{{ rates5.rate }}" {% {%></td>
@@ -104,7 +104,7 @@ table {
 <!-- Alphabet G is missing. Reason is same i forgot it at fitst then i have wrote javascript for it that why i didn't changed it -->
         <tr>
             <td>Study</td>
-            <td><input class="input" id="h1" onblur="AFValue();" value=""></td>
+            <td><input class="input"  id="h1" onblur="AFValue();" value="0"></td>
             <td id="rateF1"><input %} %} endif hidden id="rate6" if name="rate6"
                                    not request.user.is_superuser
                                    value="{{ rates6.rate }}" {% {%></td>
@@ -113,16 +113,15 @@ table {
 
         <tr>
             <td>Game Room</td>
-            <td><input class="input" id="i1" onblur="AGValue();" value=""></td>
-            <td id="rateG1"><input %} %} endif hidden id="rate7" if name="rate7"
-                                   not request.user.is_superuser
+            <td><input class="input"  id="i1" onblur="AGValue();" value="0"></td>
+            <td id="rateG1"><input %} %} endif hidden id="rate7" if name="rate7" not request.user.is_superuser
                                    value="{{ rates7.rate }}" {% {%></td>
 
         </tr>
 
         <tr>
             <td>Media Room</td>
-            <td><input class="input" id="j1" onblur="AHValue();" value=""></td>
+            <td><input class="input" id="j1" onblur="AHValue();" value="0"></td>
             <td id="rateH1"><input %} %} endif hidden id="rate8" if name="rate8"
                                    not request.user.is_superuser
                                    value="{{ rates8.rate }}" {% {%></td>
@@ -131,7 +130,7 @@ table {
 
         <tr>
             <td>Laundry Room</td>
-            <td><input class="input" id="k1" onblur="AIValue();" value=""></td>
+            <td><input class="input" id="k1" onblur="AIValue();" value="0"></td>
             <td id="rateI1"><input %} %} endif hidden id="rate9" if name="rate9"
                                    not request.user.is_superuser
                                    value="{{ rates9.rate }}" {% {%></td>
@@ -140,7 +139,7 @@ table {
 
         <tr>
             <td>Rooms with HW Floors</td>
-            <td><input class="input" id="l1" onblur="AJValue();" value=""></td>
+            <td><input class="input" id="l1" onblur="AJValue();" value="0"></td>
             <td id="rateJ1"><input %} %} endif hidden id="rate10" if
                                    name="rate10" not request.user.is_superuser
                                    value="{{ rates10.rate }}" {% {%></td>
@@ -148,7 +147,7 @@ table {
         </tr>
         <tr>
             <td>Multiple Vanities in Master Bath</td>
-            <td><input class="input" id="m1" onblur="AKValue();" value=""></td>
+            <td><input class="input" id="m1" onblur="AKValue();" value="0"></td>
 
             <td id="rateK1"><input %} %} endif hidden id="rate11" if
                                    name="rate11" not request.user.is_superuser
@@ -158,7 +157,7 @@ table {
 
         <tr>
             <td>People</td>
-            <td><input class="input" id="n1" onblur="ALValue();" value=""></td>
+            <td><input class="input" id="n1" onblur="ALValue();" value="0"></td>
             <td id="rateL1"><input %} %} endif hidden id="rate12" if
                                    name="rate12" not request.user.is_superuser
                                    value="{{ rates12.rate }}" {% {%></td>
@@ -167,7 +166,7 @@ table {
 
         <tr>
             <td>Pets</td>
-            <td><input class="input" id="o1" onblur="AMValue();" value=""></td>
+            <td><input class="input" id="o1" onblur="AMValue();" value="0"></td>
             <td id="rateM1"><input %} %} endif hidden id="rate13" if
                                    name="rate13" not request.user.is_superuser
                                    value="{{ rates13.rate }}" {% {%></td>
@@ -176,7 +175,7 @@ table {
 
         <tr>
             <td>Number of Levels/Stories</td>
-            <td><input class="input" id="p1" onblur="ANValue();" value=""></td>
+            <td><input class="input" id="p1" onblur="ANValue();" value="0"></td>
             <td id="rateN1"><input %} %} endif hidden id="rate14" if
                                    name="rate14" not request.user.is_superuser
                                    value="{{ rates14.rate }}" {% {%></td>
@@ -185,18 +184,18 @@ table {
         <!-- q1 r1 and s1 are already in use -->
 <tr>
     <td>Per Hour Rate</td>
-    <td><input value="75" id="u1"></td>
+    <td><input value="75"  id="u1"></td>
         </tr>
 
         <tr>
             <td><b>Total Weekly Service</b></td>
-            <td><b><input class="input" id="t1" value="0"></b></td>
+            <td><b><input class="input"  id="t1" value="0"></b></td>
             <td></td>
         </tr>
 
         <tr>
             <td><b>Alternate Weekly Service</b></td>
-            <td><b><input class="input" id="t2" value="0"></b></td>
+            <td><b><input class="input"  id="t2" value="0"></b></td>
             <td></td>
         </tr>
         <tr>
@@ -208,35 +207,35 @@ table {
 
         <tr>
 
-            <td><input id="btn_submit" name="btn_submit" onclick="sumOfValues();tax();total();" type="submit"
-                       value="Submit"></td>
-            <td><input id="btn_clear" name="btn_clear" onclick="clear();" type="button" value="Clear"></td>
+            <td><input id="btn_submit"  name="btn_submit" onclick="sumOfValues();tax();total();" type="submit" value="Submit"></td>
+            <td><input id="btn_clear" name="btn_clear" onclick="clear();" type="submit" value="Clear"></td>
 
         </tr>
 
     </table>
-
+</center>
+</div>
 <!-- this section is hidden, some calculations are based on the input fields that's why i hide this section and will use it for testing and verification -->
     <!-- In future i will bypass this section with variables in the JavaScript. But for now it's working so let it be like this -->
 
     <div hidden>
         <table>
 
-            <td><input id="a1" value=""></td>
-            <td><input id="AA" value=""></td>
-            <td><input id="AB" value=""></td>
-            <td><input id="AC" value=""></td>
-            <td><input id="AD" value=""></td>
-            <td><input id="AE" value=""></td>
-            <td><input id="AF" value=""></td>
-            <td><input id="AG" value=""></td>
-            <td><input id="AH" value=""></td>
-            <td><input id="AI" value=""></td>
-            <td><input id="AJ" value=""></td>
-            <td><input id="AK" value=""></td>
-            <td><input id="AL" value=""></td>
-            <td><input id="AM" value=""></td>
-            <td><input id="AN" value=""></td>
+            <td><input id="a1" value="0"></td>
+            <td><input id="AA" value="0"></td>
+            <td><input id="AB" value="0"></td>
+            <td><input id="AC" value="0"></td>
+            <td><input id="AD" value="0"></td>
+            <td><input id="AE" value="0"></td>
+            <td><input id="AF" value="0"></td>
+            <td><input id="AG" value="0"></td>
+            <td><input id="AH" value="0"></td>
+            <td><input id="AI" value="0"></td>
+            <td><input id="AJ" value="0"></td>
+            <td><input id="AK" value="0"></td>
+            <td><input id="AL" value="0"></td>
+            <td><input id="AM" value="0"></td>
+            <td><input id="AN" value="0"></td>
 
             <td><input id="tax_ratio" value="5"></td>
             <td><input id="tax1"></td>

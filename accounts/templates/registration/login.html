@@ -3,10 +3,32 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<h2>Log In</h2>
+<main class="form-signin">
+<div class="form-group">
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
+  <img class="mb-4" src="/static/assets/img/sp.png" alt="" width="200" height="110">
+    <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+  <div class="form-floating" >
+
+    <input type="text" class="form-control" name="username" placeholder="username" id="floatingInput">
+    <label for="floatingInput">Username</label>
+  </div>
+
+
+  <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+<div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+
+<button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
 </form>
+</div>
+</main>
 {% endblock %}
