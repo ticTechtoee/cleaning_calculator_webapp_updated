@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'About.apps.AboutConfig',
     'Tutorial.apps.TutorialConfig',
     'calculator.apps.CalculatorConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,6 +122,7 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'cleaning_calculator_webapp/static/')
 ]
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'

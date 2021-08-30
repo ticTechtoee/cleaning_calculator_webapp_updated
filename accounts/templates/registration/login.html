@@ -7,7 +7,7 @@
 <div class="form-group">
 <form method="post">
   {% csrf_token %}
-  <img class="mb-4" src="/static/assets/img/sp.png" alt="" width="200" height="110">
+  <img class="mb-4" src="/static/assets/img/sp.png" alt="" width="200" height="80">
     <h1 class="h3 mb-3 fw-normal">Please Login</h1>
   <div class="form-floating" >
 
@@ -29,6 +29,10 @@
 
 <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
 </form>
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    <p>Not a Member?    <a href="{% url 'signup' %}">Signup Here</a></p>
 </div>
 </main>
 {% endblock %}
