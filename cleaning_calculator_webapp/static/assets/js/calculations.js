@@ -96,98 +96,99 @@ range=function()
 AAValue = function()
 {
 var b1Value = document.getElementById('b1').value;
-var rate1Value = document.getElementById('rate1').value;
+var rate1Value = 6;
+//Test
 document.getElementById('AA').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 ABValue = function()
 {
 var b1Value = document.getElementById('c1').value;
-var rate1Value = document.getElementById('rate2').value;
+var rate1Value = 14;
 document.getElementById('AB').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 ACValue = function()
 {
 var b1Value = document.getElementById('d1').value;
-var rate1Value = document.getElementById('rate3').value;
+var rate1Value = 6;
 document.getElementById('AC').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 ADValue = function()
 {
 var b1Value = document.getElementById('e1').value;
-var rate1Value = document.getElementById('rate4').value;
+var rate1Value = 4;
 document.getElementById('AD').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AEValue = function()
 {
 var b1Value = document.getElementById('f1').value;
-var rate1Value = document.getElementById('rate5').value;
+var rate1Value = 5;
 document.getElementById('AE').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AFValue = function()
 {
 var b1Value = document.getElementById('h1').value;
-var rate1Value = document.getElementById('rate6').value;
+var rate1Value = 5;
 document.getElementById('AF').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AGValue = function()
 {
 var b1Value = document.getElementById('i1').value;
-var rate1Value = document.getElementById('rate7').value;
+var rate1Value = 5;
 document.getElementById('AG').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AHValue = function()
 {
 var b1Value = document.getElementById('j1').value;
-var rate1Value = document.getElementById('rate8').value;
+var rate1Value = 4;
 document.getElementById('AH').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AIValue = function()
 {
 var b1Value = document.getElementById('k1').value;
-var rate1Value = document.getElementById('rate9').value;
+var rate1Value = 3;
 document.getElementById('AI').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AJValue = function()
 {
 var b1Value = document.getElementById('l1').value;
-var rate1Value = document.getElementById('rate10').value;
+var rate1Value = 3;
 document.getElementById('AJ').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AKValue = function()
 {
 var b1Value = document.getElementById('m1').value;
-var rate1Value = document.getElementById('rate11').value;
+var rate1Value = 3;
 document.getElementById('AK').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 ALValue = function()
 {
 var b1Value = document.getElementById('n1').value;
-var rate1Value = document.getElementById('rate12').value;
+var rate1Value = 3;
 document.getElementById('AL').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 AMValue = function()
 {
 var b1Value = document.getElementById('o1').value;
-var rate1Value = document.getElementById('rate13').value;
+var rate1Value = 2;
 document.getElementById('AM').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
 ANValue = function()
 {
-var b1Value = document.getElementById('o1').value;
-var rate1Value = document.getElementById('rate14').value;
+var b1Value = document.getElementById('p1').value;
+var rate1Value = 3;
 document.getElementById('AN').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 }
 
@@ -210,31 +211,32 @@ var m3 = document.getElementById('AM').value;
 var n3 = document.getElementById('AN').value;
 var o3 = document.getElementById('a1').value;
 
-var value1 = 15;
-var value2 = 30;
+var result = parseFloat(a1) + parseFloat(b3) + parseFloat(c3) + parseFloat(d3) + parseFloat(e3) + parseFloat(f3) + parseFloat(g3) + parseFloat(h3) + parseFloat(i3) + parseFloat(j3) + parseFloat(k3) + parseFloat(l3) + parseFloat(m3) + parseFloat(n3) + parseFloat(o3);
 
-var result = parseInt(a1) + parseInt(b3) + parseInt(c3) + parseInt(d3) + parseInt(e3) + parseInt(f3) + parseInt(g3) + parseInt(h3) + parseInt(i3) + parseInt(j3) + parseInt(k3) + parseInt(l3) + parseInt(m3) + parseInt(n3) + parseInt(o3);
-document.getElementById('q1').value = result.toFixed(2);
-document.getElementById('r1').value = result.toFixed(2) + parseFloat(value1).toFixed(2);
-document.getElementById('s1').value = result.toFixed(2) + parseFloat(value2).toFixed(2);
+document.getElementById('q1').value = result;
+document.getElementById('r1').value = result + 15;
+document.getElementById('s1').value = result + 30;
+
+
 }
 
 tax = function()
 {
 var tax_ratio = document.getElementById('tax_ratio').value;
+
 var q1Value = document.getElementById('q1').value;
 
 var r1Value = document.getElementById('r1').value;
 var s1Value = document.getElementById('s1').value;
 
 
-var result1 = q1Value * parseFloat(tax_ratio/100).toFixed(2);
-var result2 = r1Value * parseFloat(tax_ratio/100).toFixed(2);
-var result3 = s1Value * parseFloat(tax_ratio/100).toFixed(2);
+var result1 = q1Value * parseFloat(tax_ratio/100);
+var result2 = r1Value * parseFloat(tax_ratio/100);
+var result3 = s1Value * parseFloat(tax_ratio/100);
 
-document.getElementById('tax1').value = result1;
-document.getElementById('tax2').value = result2;
-document.getElementById('tax3').value = result3;
+document.getElementById('tax1').value = result1.toFixed(2);
+document.getElementById('tax2').value = result2.toFixed(2);
+document.getElementById('tax3').value = result3.toFixed(2);
 }
 
 total = function()
@@ -247,36 +249,54 @@ var tax1 =document.getElementById('tax1').value;
 var tax2 = document.getElementById('tax2').value;
 var tax3 = document.getElementById('tax3').value;
 
-var total1 = parseFloat(q1).toFixed(2) + parseFloat(tax1).toFixed(2);
-var total2 = parseFloat(r1).toFixed(2) + parseFloat(tax2).toFixed(2);
-var total3 = parseFloat(s1).toFixed(2) + parseFloat(tax3).toFixed(2);
+var total1 = parseFloat(q1) + parseFloat(tax1);
+var total2 = parseFloat(r1) + parseFloat(tax2);
+var total3 = parseFloat(s1) + parseFloat(tax3);
 
-document.getElementById('t1').value = total1;
-document.getElementById('t2').value = total2;
-document.getElementById('t3').value = total3;
+document.getElementById('t1').value = total1.toFixed(2);
+document.getElementById('t2').value = total2.toFixed(2);
+document.getElementById('t3').value = total3.toFixed(2);
 
 }
 
-clear = function()
+clear_function = function()
 {
-document.getElementById('a01').value = "0";
-document.getElementById('b1').value = "0";
-document.getElementById('c1').value = "0";
-document.getElementById('d1').value = "0";
-document.getElementById('e1').value = "0";
-document.getElementById('f1').value = "0";
-document.getElementById('h1').value = "0";
-document.getElementById('i1').value = "0";
-document.getElementById('j1').value = "0";
-document.getElementById('k1').value = "0";
-document.getElementById('l1').value = "0";
-document.getElementById('m1').value = "0";
-document.getElementById('n1').value = "0";
-document.getElementById('o1').value = "0";
-document.getElementById('p1').value = "0";
+  document.getElementById('a01').value = '0';
+  document.getElementById('b1').value = '0';
+  document.getElementById('c1').value = '0';
+  document.getElementById('d1').value = '0';
+  document.getElementById('e1').value = '0';
+  document.getElementById('f1').value = '0';
+  document.getElementById('h1').value = '0';
+  document.getElementById('i1').value = '0';
+  document.getElementById('j1').value = '0';
+  document.getElementById('k1').value = '0';
+  document.getElementById('l1').value = '0';
+  document.getElementById('m1').value = '0';
+  document.getElementById('n1').value = '0';
+  document.getElementById('o1').value = '0';
+  document.getElementById('p1').value = '0';
+  document.getElementById('t1').value = '0';
+  document.getElementById('t2').value = '0';
+  document.getElementById('t3').value = '0';
 
-document.getElementById('t1').value = "0";
-document.getElementById('t2').value = "0";
-document.getElementById('t3').value = "0";
 }
 
+var idarray = ["tax_ratio","u1", "a01", "b1" , "c1", "d1", "e1", "f1" , "h1", "i1", "j1", "k1", "l1", "m1", "n1", "o1", "p1", "tax_ratio"];
+    function focusNext(e)
+        {
+        try{
+            for(var i=0; i < idarray.length; i++)
+            {
+            if(e.keyCode === 13 && e.target.id === idarray[i])
+                    {
+                        document.querySelector(`#${idarray[i+1]}`).focus();
+                        document.querySelector(`#${idarray[i+1]}`).select();
+                    }
+                }
+                }
+            catch(error)
+    {
+
+    }
+}

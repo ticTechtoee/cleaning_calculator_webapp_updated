@@ -2,7 +2,7 @@ from django.shortcuts import render
 from calculator.models import update_price
 
 
-def ui(request):
+def index(request):
     # it's a simple implementation "update_price.objects.get(name='name_of_field')" is retrieving value from database
     rate1 = update_price.objects.get(name='rate1')
     rate2 = update_price.objects.get(name='rate2')

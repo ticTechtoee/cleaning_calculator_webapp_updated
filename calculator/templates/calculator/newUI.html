@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>
-        Calculator
-    </title>
+
 <!-- Basic Styling for table -->
+ <title>Serv Peeps | Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="/static/assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo.css">
+    <link rel="stylesheet" href="/static/assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
     <style>
 
 table {
@@ -26,15 +44,104 @@ table {
          width: 200px
 
          }
-
+#btn_clear{
+border-color: gray;
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
 
     </style>
+
+
 </head>
 <body>
-<div>
+
+     <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:servpeeps@gmail.com">servpeeps@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">000-1111-112</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="{% url 'home:index' %}">
+                Serv Peeps
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home:index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about:index' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tutorial:index' %}">Tutorial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'calculator:index' %}">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+
+{% if user.is_authenticated %}
+ <p>Welcome {{ user.username }}!
+                    <a class="nav-icon position-relative text-decoration-none" href="{% url 'logout' %}">Log Out</a></p>
+ {% else %}
+                    <a class="nav-icon position-relative text-decoration-none" href="{% url 'login' %}">
+<i class="fa fa-fw fa-user text-dark mr-3"></i>
+              {% endif %}
+
+                       <!-- <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span> -->
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+</br>
+</br>
+</br>
+{% if user.is_authenticated %}
+
+
+
+   <div class="container">
 <center>
 <!-- To implement the Row and Column Structure I have defined the Table -->
+<div>
     <table>
 
 
@@ -44,177 +151,168 @@ table {
         <th>
             <center><h3>Value</h3></center>
         </th>
+        <tr>
+            <td>Sales Tax Amount*</td>
+            <td><input id="tax_ratio" value="5" onkeydown="focusNext(event)" style="width:300px"></td>
+
+        </tr>
+<tr>
+    <td>Per Hour Rate*</td>
+    <div>
+    <td><input value="75"  id="u1" class="register_form" onkeydown="focusNext(event)" style="width:300px"></td>
+</div>
+</tr>
 
 
         <tr>
-            <td><label>Square Feet: </label></td>
+            <td><label>Square Feet* </label></td>
 
 
             <td>
                 <!-- Each Column starts with next alphabet (e.g a, b,c) Reason first one starts with a01 is i am lazy i didn't want to change the all row ids that why i kept it this way -->
-                <input id="a01" onblur="range();" value="0">
-
+      <div>
+                <input id="a01" onblur="range();sumOfValues();tax();total();" value="0" class="register_form" onkeydown="focusNext(event)" style="width:300px">
+</div>
 
             </td>
         </tr>
 
 
         <tr>
-            <td>Bedrooms</td>
-            <td><input class="input" id="b1" onblur="AAValue();" value="0"></td>
-            <td id="rateA1"><input %} %} endif hidden id="rate1" if name="rate1"
-                                   not request.user.is_superuser value="{{ rates1.rate }}" {% {%></td>
+            <td>Bedrooms*</td>
+            <td style="width:400px"><input class="input" id="b1" onblur="AAValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateA1"><input {%  if not request.user.is_superuser %} type="hidden" {% else %} id="rate1" name="rate1" value="{{ rates1.rate }}" {% endif %}></td>
 
         </tr>
 
 
         <tr>
-            <td>Bathrooms</td>
-            <td><input class="input"  id="c1" onblur="ABValue();" value="0"></td>
-            <td id="rateB1"><input %} %} endif hidden id="rate2" if name="rate2"
-                                   not request.user.is_superuser
-                                   value="{{ rates2.rate }}" {% {%></td>
-
+            <td>Bathrooms*</td>
+            <td><input class="input"  id="c1" onblur="ABValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateB1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate2" name="rate2" value="{{ rates2.rate }}" {% endif %}></td>
         </tr>
         <tr>
-            <td>Living Rooms</td>
-            <td><input class="input"  id="d1" onblur="ACValue();" value="0"></td>
-            <td id="rateC1"><input %} %} endif hidden id="rate3" if name="rate3"
-                                   not request.user.is_superuser
-                                   value="{{ rates3.rate }}" {% {%></td>
+            <td>Living Rooms*</td>
+            <td><input class="input"  id="d1" onblur="ACValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateC1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate3" name="rate3" value="{{ rates3.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Dining Room</td>
-            <td><input class="input"  id="e1" onblur="ADValue();" value="0"></td>
-            <td id="rateD1"><input %} %} endif hidden id="rate4" if name="rate4"
-                                   not request.user.is_superuser
-                                   value="{{ rates4.rate }}" {% {%></td>
+            <td>Dining Room*</td>
+            <td><input class="input"  id="e1" onblur="ADValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateD1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate4" name="rate4" value="{{ rates4.rate }}" {% endif %}></td>
 
         </tr>
         <tr>
-            <td>Den/Family Room</td>
-            <td><input class="input"  id="f1" onblur="AEValue();" value="0"></td>
-            <td id="rateE1"><input %} %} endif hidden id="rate5" if name="rate5"
-                                   not request.user.is_superuser
-                                   value="{{ rates5.rate }}" {% {%></td>
+            <td>Den/Family Room*</td>
+            <td><input class="input"  id="f1" onblur="AEValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateE1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate5" name="rate5" value="{{ rates5.rate }}" {% endif %}></td>
 
         </tr>
 <!-- Alphabet G is missing. Reason is same i forgot it at fitst then i have wrote javascript for it that why i didn't changed it -->
         <tr>
-            <td>Study</td>
-            <td><input class="input"  id="h1" onblur="AFValue();" value="0"></td>
-            <td id="rateF1"><input %} %} endif hidden id="rate6" if name="rate6"
-                                   not request.user.is_superuser
-                                   value="{{ rates6.rate }}" {% {%></td>
+            <td>Study*</td>
+            <td><input class="input"  id="h1" onblur="AFValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateF1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate6" name="rate6" value="{{ rates6.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Game Room</td>
-            <td><input class="input"  id="i1" onblur="AGValue();" value="0"></td>
-            <td id="rateG1"><input %} %} endif hidden id="rate7" if name="rate7" not request.user.is_superuser
-                                   value="{{ rates7.rate }}" {% {%></td>
+            <td>Game Room*</td>
+            <td><input class="input"  id="i1" onblur="AGValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateG1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate7" name="rate7" value="{{ rates7.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Media Room</td>
-            <td><input class="input" id="j1" onblur="AHValue();" value="0"></td>
-            <td id="rateH1"><input %} %} endif hidden id="rate8" if name="rate8"
-                                   not request.user.is_superuser
-                                   value="{{ rates8.rate }}" {% {%></td>
+            <td>Media Room*</td>
+            <td><input class="input" id="j1" onblur="AHValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateH1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate8" name="rate8" value="{{ rates8.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Laundry Room</td>
-            <td><input class="input" id="k1" onblur="AIValue();" value="0"></td>
-            <td id="rateI1"><input %} %} endif hidden id="rate9" if name="rate9"
-                                   not request.user.is_superuser
-                                   value="{{ rates9.rate }}" {% {%></td>
+            <td>Laundry Room*</td>
+            <td><input class="input" id="k1" onblur="AIValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateI1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate9" name="rate9" value="{{ rates9.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Rooms with HW Floors</td>
-            <td><input class="input" id="l1" onblur="AJValue();" value="0"></td>
-            <td id="rateJ1"><input %} %} endif hidden id="rate10" if
-                                   name="rate10" not request.user.is_superuser
-                                   value="{{ rates10.rate }}" {% {%></td>
+            <td>Rooms with HW Floors*</td>
+            <td><input class="input" id="l1" onblur="AJValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateJ1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate10" name="rate10" value="{{ rates10.rate }}" {% endif %}></td>
 
         </tr>
         <tr>
-            <td>Multiple Vanities in Master Bath</td>
-            <td><input class="input" id="m1" onblur="AKValue();" value="0"></td>
+            <td><label style="width:300px">Multiple Vanities in Master Bath*</label></td>
+            <td><input class="input" id="m1" onblur="AKValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
 
-            <td id="rateK1"><input %} %} endif hidden id="rate11" if
-                                   name="rate11" not request.user.is_superuser
-                                   value="{{ rates11.rate }}" {% {%></td>
+            <td id="rateK1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate11" name="rate11" value="{{ rates11.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>People</td>
-            <td><input class="input" id="n1" onblur="ALValue();" value="0"></td>
-            <td id="rateL1"><input %} %} endif hidden id="rate12" if
-                                   name="rate12" not request.user.is_superuser
-                                   value="{{ rates12.rate }}" {% {%></td>
+            <td>People*</td>
+            <td><input class="input" id="n1" onblur="ALValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateL1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate12" name="rate12" value="{{ rates12.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Pets</td>
-            <td><input class="input" id="o1" onblur="AMValue();" value="0"></td>
-            <td id="rateM1"><input %} %} endif hidden id="rate13" if
-                                   name="rate13" not request.user.is_superuser
-                                   value="{{ rates13.rate }}" {% {%></td>
+            <td>Pets*</td>
+            <td><input class="input" id="o1" onblur="AMValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateM1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate13" name="rate13" value="{{ rates13.rate }}" {% endif %}></td>
 
         </tr>
 
         <tr>
-            <td>Number of Levels/Stories</td>
-            <td><input class="input" id="p1" onblur="ANValue();" value="0"></td>
-            <td id="rateN1"><input %} %} endif hidden id="rate14" if
-                                   name="rate14" not request.user.is_superuser
-                                   value="{{ rates14.rate }}" {% {%></td>
+            <td>Number of Levels/Stories*</td>
+            <td><input class="input" id="p1" onblur="ANValue();sumOfValues();tax();total();" value="0" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td id="rateN1"><input {%  if not request.user.is_superuser %} hidden {% else %} id="rate14" name="rate14" value="{{ rates14.rate }}" {% endif %}></td>
 
         </tr>
+
         <!-- q1 r1 and s1 are already in use -->
-<tr>
-    <td>Per Hour Rate</td>
-    <td><input value="75"  id="u1"></td>
-        </tr>
 
         <tr>
             <td><b>Total Weekly Service</b></td>
-            <td><b><input class="input"  id="t1" value="0"></b></td>
+            <td><b><input class="input"  id="t1" value="0" readonly style="width:300px"></b></td>
             <td></td>
         </tr>
 
         <tr>
             <td><b>Alternate Weekly Service</b></td>
-            <td><b><input class="input"  id="t2" value="0"></b></td>
+            <td><b><input class="input"  id="t2" value="0" readonly style="width:300px"></b></td>
             <td></td>
         </tr>
         <tr>
             <td><b>Monthly Service</b></td>
-            <td><b><input class="input" id="t3" value="0"></b></td>
+            <td><b><input class="input" id="t3" value="0" readonly style="width:300px"></b></td>
             <td></td>
         </tr>
 
 
         <tr>
 
-            <td><input id="btn_submit"  name="btn_submit" onclick="sumOfValues();tax();total();" type="submit" value="Submit"></td>
-            <td><input id="btn_clear" name="btn_clear" onclick="clear();" type="submit" value="Clear"></td>
+
+            <td colspan="2"><center><button id="btn_clear" onclick="clear_function();" style="width:400px">Clear</button></center></td>
 
         </tr>
 
     </table>
+    </div>
 </center>
 </div>
+
+
+
+
+
+
+
+
 <!-- this section is hidden, some calculations are based on the input fields that's why i hide this section and will use it for testing and verification -->
     <!-- In future i will bypass this section with variables in the JavaScript. But for now it's working so let it be like this -->
 
@@ -237,14 +335,14 @@ table {
             <td><input id="AM" value="0"></td>
             <td><input id="AN" value="0"></td>
 
-            <td><input id="tax_ratio" value="5"></td>
-            <td><input id="tax1"></td>
-            <td><input id="tax2"></td>
-            <td><input id="tax3"></td>
 
-            <td><input id="q1"></td>
-            <td><input id="r1"></td>
-            <td><input id="s1"></td>
+            <td><input id="tax1" value="0"></td>
+            <td><input id="tax2" value="0"></td>
+            <td><input id="tax3" value="0"></td>
+
+            <td><input id="q1" value="0"></td>
+            <td><input id="r1" value="0"></td>
+            <td><input id="s1" value="0"></td>
 
 
         </table>
@@ -252,6 +350,98 @@ table {
 
 
 </center>
-<script src="/static/assets/js/calculations.js"></script>
+
+{% else %}
+
+<center><h3>You're not authorized please<a href="{% url 'login' %}"> login here</h3></center>
+{% endif %}
+</br>
+</br>
+</br>
+</br>
+</br>
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Serv Peeps</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            USA
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">servpeeps@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="{% url 'home:index' %}">Home</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'about:index' %}">About Us</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'calculator:index' %}">Calculator</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'tutorial:index' %}">Tutorial</a></li>
+                        <li><a class="text-decoration-none" href="">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Serv Peeps
+                            | Designed by <a rel="sponsored" href="#" target="_blank">Unique Design</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="/static/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="/static/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/js/templatemo.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
+    <script src="/static/assets/js/calculations.js"></script>
+    <!-- End Script -->
+
 </body>
 </html>
