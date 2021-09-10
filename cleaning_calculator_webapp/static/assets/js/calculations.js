@@ -6,88 +6,88 @@ range=function()
 
             if(document.getElementById('a01').value >= 0 && document.getElementById('a01').value <= 1500)
                {
-               var val = parseFloat(hour_rate) * 0.5;
+               var val = parseFloat(hour_rate) * 0.50;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 1500 && document.getElementById('a01').value <= 1750)
+               if(document.getElementById('a01').value >= 1501 && document.getElementById('a01').value <= 1750)
                {
                var val = parseFloat(hour_rate) * 0.55;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 1750 && document.getElementById('a01').value <= 2000)
+               if(document.getElementById('a01').value >= 1751 && document.getElementById('a01').value <= 2000)
                {
-               var val = parseFloat(hour_rate) * 0.6;
+               var val = parseFloat(hour_rate) * 0.60;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 2000 && document.getElementById('a01').value <= 2250)
+               if(document.getElementById('a01').value >= 2001 && document.getElementById('a01').value <= 2250)
                {
                var val = parseFloat(hour_rate) * 0.65;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 2250 && document.getElementById('a01').value <= 2500)
+               if(document.getElementById('a01').value >= 2251 && document.getElementById('a01').value <= 2500)
                {
-               var val = parseFloat(hour_rate) * 0.7;
+               var val = parseFloat(hour_rate) * 0.70;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 2500 && document.getElementById('a01').value <= 2750)
+               if(document.getElementById('a01').value >= 2501 && document.getElementById('a01').value <= 2750)
                {
                var val = parseFloat(hour_rate) * 0.75;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 2751 && document.getElementById('a01').value <= 3000)
+               if(document.getElementById('a01').value >= 2751 && document.getElementById('a01').value <= 3000)
                {
-               var val = parseFloat(hour_rate) * 0.8;
+               var val = parseFloat(hour_rate) * 0.80;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 3000 && document.getElementById('a01').value <= 3250)
+               if(document.getElementById('a01').value >= 3001 && document.getElementById('a01').value <= 3250)
                {
                var val = parseFloat(hour_rate) * 0.85;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 3250 && document.getElementById('a01').value <= 3500)
+               if(document.getElementById('a01').value >= 3251 && document.getElementById('a01').value <= 3500)
+               {
+               var val = parseFloat(hour_rate) * 0.90;
+               document.getElementById('a1').value = val.toFixed(2);
+               }
+
+               if(document.getElementById('a01').value >= 3501 && document.getElementById('a01').value <= 4000)
                {
                var val = parseFloat(hour_rate) * 1;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 3500 && document.getElementById('a01').value <= 4000)
-               {
-               var val = parseFloat(hour_rate) * 0.5;
-               document.getElementById('a1').value = val.toFixed(2);
-               }
-
-               if(document.getElementById('a01').value > 4000 && document.getElementById('a01').value <= 4500)
+               if(document.getElementById('a01').value >= 4001 && document.getElementById('a01').value <= 4500)
                {
                var val = parseFloat(hour_rate) * 1.5;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 4500 && document.getElementById('a01').value <= 5000)
+               if(document.getElementById('a01').value >= 4501 && document.getElementById('a01').value <= 5000)
                {
                var val = parseFloat(hour_rate) * 2;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 5000 && document.getElementById('a01').value <= 5500)
+               if(document.getElementById('a01').value >= 5001 && document.getElementById('a01').value <= 5500)
                {
                var val = parseFloat(hour_rate) * 2.5;
                document.getElementById('a1').value = val.toFixed(2);
                }
 
-               if(document.getElementById('a01').value > 5500 && document.getElementById('a01').value <= 6000)
+               if(document.getElementById('a01').value >= 5501 && document.getElementById('a01').value <= 6000)
                {
                var val = parseFloat(hour_rate) * 3;
                document.getElementById('a1').value = val.toFixed(2);
                }
-               if(document.getElementById('a01').value > 6000 )
+               if(document.getElementById('a01').value >= 6001 )
                {
                               document.getElementById('a1').value = 'Please Contact Us';
                }

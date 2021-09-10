@@ -153,13 +153,13 @@ border-color: gray;
         </th>
         <tr>
             <td>Sales Tax Amount*</td>
-            <td><input id="tax_ratio" value="5" onkeydown="focusNext(event)" style="width:300px"></td>
+            <td><input onblur="sumOfValues();tax();total();" id="tax_ratio" value="5" onkeydown="focusNext(event)" style="width:300px"></td>
 
         </tr>
 <tr>
     <td>Per Hour Rate*</td>
     <div>
-    <td><input value="75"  id="u1" class="register_form" onkeydown="focusNext(event)" style="width:300px"></td>
+    <td><input onblur="sumOfValues();tax();total();" value="75"  id="u1" class="register_form" onkeydown="focusNext(event)" style="width:300px"></td>
 </div>
 </tr>
 
@@ -316,7 +316,7 @@ border-color: gray;
 <!-- this section is hidden, some calculations are based on the input fields that's why i hide this section and will use it for testing and verification -->
     <!-- In future i will bypass this section with variables in the JavaScript. But for now it's working so let it be like this -->
 
-    <div hidden>
+    <div>
         <table>
 
             <td><input id="a1" value="0"></td>
