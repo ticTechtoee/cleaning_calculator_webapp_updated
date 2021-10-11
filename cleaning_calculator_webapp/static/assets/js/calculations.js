@@ -1,4 +1,3 @@
-
 // Range function will set the price according to the input in square feet field
 range = function () {
     var hour_rate = document.getElementById('u1').value;
@@ -77,12 +76,10 @@ range = function () {
         if (document.getElementById('a01').value >= 6001) {
             document.getElementById('a1').value = 'Please Contact Us';
         }
-    }
+    } else if (hour_rate != "") {
 
-    else if (hour_rate != "") {
-      
         hour_rate = document.getElementById('u1').value;
-      
+
         if (document.getElementById('a01').value >= 0 && document.getElementById('a01').value <= 1500) {
             var val = parseFloat(hour_rate) * 0.50;
             document.getElementById('a1').value = val.toFixed(2);
@@ -169,8 +166,7 @@ AAValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AA').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
 
         var rate1Value = 6;
         b1Value = document.getElementById('b1').value;
@@ -188,8 +184,7 @@ ABValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AB').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 14;
         b1Value = document.getElementById('c1').value;
 
@@ -208,8 +203,7 @@ ACValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AC').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 6;
         b1Value = document.getElementById('d1').value;
 
@@ -227,8 +221,7 @@ ADValue = function () {
 
         document.getElementById('AD').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
 
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 4;
         b1Value = document.getElementById('e1').value;
 
@@ -244,8 +237,7 @@ AEValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AE').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 5;
         b1Value = document.getElementById('f1').value;
 
@@ -263,8 +255,7 @@ AFValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AF').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 5;
         b1Value = document.getElementById('h1').value;
 
@@ -280,8 +271,7 @@ AGValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AG').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 5;
         b1Value = document.getElementById('i1').value;
 
@@ -298,8 +288,7 @@ AHValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AH').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 4;
         b1Value = document.getElementById('j1').value;
 
@@ -317,8 +306,7 @@ AIValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AI').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
 
         var rate1Value = 3;
         b1Value = document.getElementById('k1').value;
@@ -335,8 +323,7 @@ AJValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AJ').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 3;
         b1Value = document.getElementById('l1').value;
 
@@ -352,8 +339,7 @@ AKValue = function () {
 
         b1Value = 0.00;
         document.getElementById('AK').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 3;
 
         b1Value = document.getElementById('m1').value;
@@ -370,8 +356,7 @@ ALValue = function () {
         b1Value = 0.00;
 
         document.getElementById('AL').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 3;
         b1Value = document.getElementById('n1').value;
 
@@ -388,8 +373,7 @@ AMValue = function () {
 
         b1Value = 0.00;
         document.getElementById('AM').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 2;
 
         b1Value = document.getElementById('o1').value;
@@ -407,8 +391,7 @@ ANValue = function () {
 
         b1Value = 0.00;
         document.getElementById('AN').value = parseFloat(b1Value).toFixed(2) * parseFloat(rate1Value).toFixed(2);
-    }
-    else if (b1Value != "" || b1Value != null) {
+    } else if (b1Value != "" || b1Value != null) {
         var rate1Value = 3;
 
         b1Value = document.getElementById('p1').value;
@@ -503,6 +486,7 @@ clear_function = function () {
 }
 
 var idarray = ["tax_ratio", "u1", "a01", "b1", "c1", "d1", "e1", "f1", "h1", "i1", "j1", "k1", "l1", "m1", "n1", "o1", "p1", "tax_ratio"];
+
 function focusNext(e) {
     try {
         for (var i = 0; i < idarray.length; i++) {
@@ -511,8 +495,7 @@ function focusNext(e) {
                 document.querySelector(`#${idarray[i + 1]}`).select();
             }
         }
-    }
-    catch (error) {
+    } catch (error) {
 
     }
 }
@@ -523,14 +506,14 @@ function focusUp(e) {
             if (e.keyCode === 38 && e.target.id === idarray[i]) {
                 document.querySelector(`#${idarray[i - 1]}`).select();
                 document.querySelector(`#${idarray[i - 1]}`).focus();
-                
+
             }
         }
-    }
-    catch (error) {
+    } catch (error) {
 
     }
 }
+
 function focusDown(e) {
     try {
         for (var i = 0; i < idarray.length; i++) {
@@ -539,8 +522,28 @@ function focusDown(e) {
                 document.querySelector(`#${idarray[i + 1]}`).select();
             }
         }
-    }
-    catch (error) {
+    } catch (error) {
 
     }
+}
+
+function getTheText() {
+    range();
+    AAValue();
+    ABValue();
+    ACValue();
+    ADValue();
+    AEValue();
+    AFValue();
+    AGValue();
+    AHValue();
+    AIValue();
+    AJValue();
+    AKValue();
+    ALValue();
+    AMValue();
+    ANValue();
+    sumOfValues();
+    tax();
+    total();
 }
